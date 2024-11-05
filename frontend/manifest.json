@@ -1,0 +1,23 @@
+{
+  "name": "SafeBrowse",
+  "version": "1.0.01",
+  "description": "A phishing detector plugin",
+  "permissions": ["activeTab","declarativeContent", "storage", "webNavigation"],
+  "background": {
+    "service_worker": "js/bg-loader.js"
+  },
+  "action": {
+    "default_popup": "plugin_ui.html",
+    "default_icon" : "Logo1.png"
+  },
+  "content_scripts":[
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "js": ["js/features.js"]
+    }
+  ],
+  "icons":{
+    "16": "Logo1.png"
+  },
+  "manifest_version": 3
+}
